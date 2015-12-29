@@ -1,9 +1,5 @@
 #!/usr/bin/env perl
-use strictures 1;
-
-use Test::More;
-
-require_ok('MooX::BuildArgs');
+use Test::Stream '-V1';
 
 {
     package Foo;
@@ -15,10 +11,9 @@ require_ok('MooX::BuildArgs');
 
 my $obj = Foo->new( bar=>11, baz=>22 );
 
-is_deeply(
+is(
     $obj->build_args(),
     { bar=>11, baz=>22 },
-    'worked',
 );
 
 done_testing;

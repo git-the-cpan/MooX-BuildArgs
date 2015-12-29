@@ -3,23 +3,23 @@ abstract: 'Save instantiation arguments for later use.'
 author:
   - 'Aran Deltac <bluefeet@gmail.com>'
 build_requires:
-  Test::Simple: '0.94'
+  Test::Stream: '1.302026'
 configure_requires:
-  ExtUtils::MakeMaker: '6.30'
+  ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.140640'
+generated_by: 'Dist::Zilla version 5.042, CPAN::Meta::Converter version 2.150001'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
 name: MooX-BuildArgs
 requires:
-  Moo: '0.009011'
-  Scalar::Util: '1.38'
-  namespace::clean: '0'
-  strictures: '1'
+  Carp: '0'
+  Moo: '2'
+  Scalar::Util: '0'
+  namespace::clean: '0.24'
+  strictures: '2'
 resources:
   bugtracker: https://github.com/bluefeet/MooX-BuildArgs/issues
-  homepage: https://github.com/bluefeet/MooX-BuildArgs
-  repository: https://github.com/bluefeet/MooX-BuildArgs.git
-version: '0.01'
+  repository: git://github.com/bluefeet/MooX-BuildArgs.git
+version: '0.02'

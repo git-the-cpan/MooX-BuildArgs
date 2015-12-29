@@ -1,5 +1,5 @@
 package MooX::BuildArgs;
-$MooX::BuildArgs::VERSION = '0.01';
+$MooX::BuildArgs::VERSION = '0.02';
 =head1 NAME
 
 MooX::BuildArgs - Save instantiation arguments for later use.
@@ -28,7 +28,7 @@ references will not be weakened within L</build_args>.
 =cut
 
 use Moo::Role;
-use strictures 1;
+use strictures 2;
 use namespace::clean;
 
 with 'MooX::BuildArgsHooks';
@@ -74,6 +74,10 @@ __END__
 =item *
 
 L<MooX::BuildArgsHooks>
+
+=item *
+
+L<MooX::MethodProxyArgs>
 
 =item *
 

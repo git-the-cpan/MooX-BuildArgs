@@ -1,9 +1,5 @@
 #!/usr/bin/env perl
-use strictures 1;
-
-use Test::More;
-
-require_ok('MooX::SingleArg');
+use Test::Stream '-V1';
 
 {
     package Foo;
@@ -44,7 +40,7 @@ is(
 }
 
 my $forced = FooForced->new({ bar=>44 });
-is_deeply(
+is(
     $forced->bar(),
     { bar=>44 },
     'hash ref arguments with force_single_arg',

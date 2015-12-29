@@ -1,5 +1,5 @@
 package MooX::BuildArgsHooks;
-$MooX::BuildArgsHooks::VERSION = '0.01';
+$MooX::BuildArgsHooks::VERSION = '0.02';
 =head1 NAME
 
 MooX::BuildArgsHooks - Structured BUILDARGS.
@@ -74,12 +74,12 @@ use Class::Method::Modifiers qw( install_modifier );
 use Moo::Object qw();
 
 use Moo::Role;
-use strictures 1;
+use strictures 2;
 use namespace::clean;
 
 BEGIN {
     package MooX::BuildArgsHooks::Test;
-$MooX::BuildArgsHooks::Test::VERSION = '0.01';
+$MooX::BuildArgsHooks::Test::VERSION = '0.02';
     use Moo;
     around BUILDARGS => sub{
         my $orig = shift;
@@ -89,9 +89,9 @@ $MooX::BuildArgsHooks::Test::VERSION = '0.01';
     has normalize => ( is=>'rw' );
     has transform => ( is=>'rw' );
     has finalize  => ( is=>'rw' );
-    sub NORMALIZE_BUILDARGS { $_[0]->normalize(1) }
-    sub TRANSFORM_BUILDARGS { $_[0]->transform(1) }
-    sub FINALIZE_BUILDARGS  { $_[0]->finalize(1) }
+    sub NORMALIZE_BUILDARGS { $_[0]->normalize(1); shift; @_ }
+    sub TRANSFORM_BUILDARGS { $_[0]->transform(1); $_[1] }
+    sub FINALIZE_BUILDARGS  { $_[0]->finalize(1); $_[1] }
 }
 
 # When installing these modifiers we're going to be super defensive
@@ -244,6 +244,10 @@ all other steps have completed.
 =item *
 
 L<MooX::BuildArgs>
+
+=item *
+
+L<MooX::MethodProxyArgs>
 
 =item *
 

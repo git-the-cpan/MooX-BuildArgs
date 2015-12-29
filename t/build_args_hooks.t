@@ -1,9 +1,5 @@
 #!/usr/bin/env perl
-use strictures 1;
-
-use Test::More;
-
-use_ok('MooX::BuildArgsHooks');
+use Test::Stream '-V1';
 
 {
     package Foo;
@@ -37,7 +33,6 @@ use_ok('MooX::BuildArgsHooks');
 is(
     Foo->new( 3 )->bar(),
     14,
-    'worked',
 );
 
 done_testing;

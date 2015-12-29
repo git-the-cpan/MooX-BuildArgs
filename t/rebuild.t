@@ -1,9 +1,5 @@
 #!/usr/bin/env perl
-use strictures 1;
-
-use Test::More;
-
-require_ok('MooX::Rebuild');
+use Test::Stream '-V1';
 
 {
     package Foo;

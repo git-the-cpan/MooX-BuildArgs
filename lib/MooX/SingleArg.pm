@@ -1,5 +1,5 @@
 package MooX::SingleArg;
-$MooX::SingleArg::VERSION = '0.01';
+$MooX::SingleArg::VERSION = '0.02';
 =head1 NAME
 
 MooX::SingleArg - Support single-argument instantiation.
@@ -21,7 +21,7 @@ use Class::Method::Modifiers qw( install_modifier );
 use Carp qw( croak );
 
 use Moo::Role;
-use strictures 1;
+use strictures 2;
 use namespace::clean;
 
 with 'MooX::BuildArgsHooks';
@@ -122,6 +122,10 @@ L<MooX::BuildArgs>
 =item *
 
 L<MooX::BuildArgsHooks>
+
+=item *
+
+L<MooX::MethodProxyArgs>
 
 =item *
 

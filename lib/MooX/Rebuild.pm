@@ -1,5 +1,5 @@
 package MooX::Rebuild;
-$MooX::Rebuild::VERSION = '0.01';
+$MooX::Rebuild::VERSION = '0.02';
 =head1 NAME
 
 MooX::Rebuild - Rebuild your Moo objects.
@@ -8,7 +8,7 @@ MooX::Rebuild - Rebuild your Moo objects.
 
     package Foo;
     use Moo;
-    use MooX::Rebuild;
+    with 'MooX::Rebuild';
     has get_bar => (
         is       => 'ro',
         init_arg => 'bar',
@@ -29,7 +29,7 @@ order to capture the original arguments used to create an object.
 =cut
 
 use Moo::Role;
-use strictures 1;
+use strictures 2;
 use namespace::clean;
 
 with 'MooX::BuildArgs';
@@ -74,6 +74,10 @@ L<MooX::BuildArgs>
 =item *
 
 L<MooX::BuildArgsHooks>
+
+=item *
+
+L<MooX::MethodProxyArgs>
 
 =item *
 
